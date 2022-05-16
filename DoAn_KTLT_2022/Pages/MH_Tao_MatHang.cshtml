@@ -1,0 +1,60 @@
+﻿@page
+@model DoAn_KTLT_2022.Pages.MH_Tao_MatHangModel
+@using DoAn_KTLT_2022.Entities
+@using DoAn_KTLT_2022.Services
+@using DoAn_KTLT_2022.DAL;
+@{
+}
+<div class="container">
+    <div class="row">
+        <div class="col-3 border bg-light rounded p-3">
+            <form method="post">
+                <div class="form-group">
+                    <label for="bienA">Nhập mã mặt hàng:</label><br>
+                    <input type="text" class="form-control" name="MaMH" value="@Model.A.MaMH">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Nhập tên mặt hàng:</label><br>
+                    <input type="text" class="form-control" name="TenMH" value="@Model.A.TenMH">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Hạn sử dụng:</label><br>
+                    <input type="date" class="form-control" name="HanSD" value="@Model.A.HanSD">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Công ty sản xuất:</label><br>
+                    <input type="text" class="form-control" name="CtySX" value="@Model.A.CtySX">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Ngày sản xuất:</label><br>
+                    <input type="date" class="form-control" name="NgaySX" value="@Model.A.NgaySX">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Loại hàng:</label><br>
+                    <select name="LoaiHang" id="LoaiHang" class="form-control">
+                        @{
+                            List<string> dsLoaiHang = LuuTruLoaiHang.DocDanhSachLoaiHang();
+                            foreach(string lh in dsLoaiHang)
+                            {
+                                <option value="@lh">@lh</option>
+                            }
+                        }   
+                    </select> 
+                    
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Nhập giá:</label><br>
+                    <input type="text" class="form-control" name="Gia" value="@Model.A.Gia">
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" class="form-control btn btn-warning mb-2" value="Lưu"><br />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-danger">
+<b>@Model.Chuoi</b>
+</div>

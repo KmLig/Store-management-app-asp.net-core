@@ -1,0 +1,55 @@
+﻿@page
+@model DoAn_KTLT_2022.Pages.MH_SuaSanPhamModel
+@using DoAn_KTLT_2022.DAL
+@if (@Model.coSanPham)
+{   
+<div class="container">
+    <div class="row">
+        <div class="col-3 border bg-light rounded p-3">
+            <div class="text-center"><b>Sửa mặt hàng</b></div>
+            <form method="post">                
+                <div class="form-group">
+                    <label for="bienB">Nhập tên mặt hàng:</label><br>
+                    <input type="text" class="form-control" name="TenMH" value="@Model.SanPham.TenMH">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Hạn sử dụng:</label><br>
+                    <input type="date" class="form-control" name="HanSD" value="@Model.SanPham.HanSD">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Công ty sản xuất:</label><br>
+                    <input type="text" class="form-control" name="CtySX" value="@Model.SanPham.CtySX">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Ngày sản xuất:</label><br>
+                    <input type="date" class="form-control" name="NgaySX" value="@Model.SanPham.NgaySX">
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Loại hàng:</label><br>
+                    <select name="LoaiHang" id="LoaiHang" class="form-control">
+                        @{
+                            List<string> dsLoaiHang = LuuTruLoaiHang.DocDanhSachLoaiHang();
+                            foreach(string lh in dsLoaiHang)
+                            {
+                                <option value="@lh">@lh</option>
+                            }
+                        }   
+                    </select> 
+                    
+                </div>
+                <div class="form-group">
+                    <label for="bienB">Nhập giá:</label><br>
+                    <input type="number" class="form-control" name="Gia" value="@Model.SanPham.Gia">
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" class="form-control btn btn-warning mb-2" value="Sửa"><br />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+}
+<div class="text-danger mt-2">
+@Model.Chuoi
+</div>
