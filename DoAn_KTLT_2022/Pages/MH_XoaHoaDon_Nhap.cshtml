@@ -1,0 +1,12 @@
+﻿@page
+@model DoAn_KTLT_2022.Pages.MH_XoaHoaDon_NhapModel
+@if (@Model.coHoaDon)
+{   
+<div>Ban co muon xoa hoa don @Model.HoaDon.MaHD ?</div>
+<form method="post" > 
+  <input type="submit" class="btn btn-primary" value="Xóa">
+</form> 
+}
+<div class="text-danger mt-2">
+@Model.Chuoi
+</div>

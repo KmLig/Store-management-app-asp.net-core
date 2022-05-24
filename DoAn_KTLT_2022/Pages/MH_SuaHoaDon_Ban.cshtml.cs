@@ -6,15 +6,18 @@ using DoAn_KTLT_2022.Services;
 
 namespace DoAn_KTLT_2022.Pages
 {
-    public class MH_Tao_HoaDon_BanHangModel : PageModel
+    public class MH_SuaHoaDon_BanModel : PageModel
     {
         public HOADON A;
         public string? Chuoi;
+        public bool coHoaDon;
+
+        [BindProperty(SupportsGet = true)]
+        public string Index { get; set; }
         [BindProperty]
         public string MaHD { get; set; }
         [BindProperty]
         public string Ma_TenMH { get; set; }
-        
         [BindProperty]
         public int Gia { get; set; }
         [BindProperty]
@@ -26,23 +29,34 @@ namespace DoAn_KTLT_2022.Pages
 
         public void OnGet()
         {
-            Chuoi = string.Empty;           
+            HOADON? HD = XL_HoaDon_BanHang.DocHoaDon(Index);
+            if (HD != null)
+            {
+                A = HD.Value;
+            }
+            else
+            {
+                A = new HOADON(); // co the bo
+                Chuoi = "Khong tim thay hoa don";
+            }
+            coHoaDon = (HD != null);
+            
+            
         }
         public void OnPost()
         {
-            A.MaHD = MaHD;
             string[] vs = Ma_TenMH.Split('|');
-            A.MaMH = vs[0];
-            A.TenMH = vs[1];
-            A.Gia = Gia;
-            A.SL = SL;
-            A.NgayLap = NgayLap;
-            A.ThanhTien = Gia * SL;
-            bool kq = XL_HoaDon_BanHang.TaoHoaDon(A);
+            string MaMH = vs[0];
+            string TenMH = vs[1];
+            ThanhTien = Gia * SL;
+            bool kq = XL_HoaDon_BanHang.SuaHoaDon(Index, Index, MaMH, TenMH, Gia, SL, NgayLap, ThanhTien);
+            Chuoi = $"Modify a product: {kq}";
+            //quay lai man hinh danh sach san pham
             if (kq)
             {
                 Response.Redirect("/MH_HoaDon_BanHang");
-            }
+
+            }            
             Chuoi = $"Adding a new product: {kq}";
 
         }

@@ -6,7 +6,7 @@ using DoAn_KTLT_2022.Services;
 
 namespace DoAn_KTLT_2022.Pages
 {
-    public class MH_HoaDon_NhapHangModel : PageModel
+    public class MH_HoaDon_BanHangModel : PageModel
     {
         public List<HOADON> dsHoaDon;
         //[BindProperty(SupportsGet = true)]
@@ -17,12 +17,12 @@ namespace DoAn_KTLT_2022.Pages
         
         public void OnGet()
         {
-            dsHoaDon = XL_HoaDon_NhapHang.TimKiemHoaDon(string.Empty);
+            dsHoaDon = XL_HoaDon_BanHang.TimKiemHoaDon(string.Empty);
             //countMH = XL_HoaDon.DemSoLuongMatHang(dsHoaDon);
         }
         public void OnPost()
         {
-            dsHoaDon = XL_HoaDon_NhapHang.TimKiemHoaDon(TuKhoa);
+            dsHoaDon = XL_HoaDon_BanHang.TimKiemHoaDon(TuKhoa);
             //countMH = XL_LoaiHang.DemSoLuongMatHang(dsHoaDon);
         }
     }

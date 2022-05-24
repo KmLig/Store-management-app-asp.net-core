@@ -13,7 +13,8 @@ namespace DoAn_KTLT_2022.Pages
         [BindProperty]
         public string MaHD { get; set; }
         [BindProperty]
-        public string MaMH { get; set; }
+        public string Ma_TenMH { get; set; }
+        
         [BindProperty]
         public int Gia { get; set; }
         [BindProperty]
@@ -22,32 +23,28 @@ namespace DoAn_KTLT_2022.Pages
         public DateTime NgayLap { get; set; }
         [BindProperty]
         public int ThanhTien { get; set; }
-        
+
         public void OnGet()
         {
-            Chuoi = string.Empty;
-            A.MaHD = MaHD;
-            A.MaMH = MaMH;
-            A.Gia = Gia;
-            A.SL = SL;
-            A.NgayLap = NgayLap;
-            A.ThanhTien = ThanhTien;   
+            Chuoi = string.Empty;           
         }
         public void OnPost()
         {
             A.MaHD = MaHD;
-            A.MaMH = MaMH;
+            string[] vs = Ma_TenMH.Split('|');
+            A.MaMH = vs[0];
+            A.TenMH = vs[1];
             A.Gia = Gia;
             A.SL = SL;
             A.NgayLap = NgayLap;
             A.ThanhTien = Gia * SL;
-            bool kq = XL_HoaDon.TaoHoaDon(A);
+            bool kq = XL_HoaDon_NhapHang.TaoHoaDon(A);
             if (kq)
             {
                 Response.Redirect("/MH_HoaDon_NhapHang");
             }
             Chuoi = $"Adding a new product: {kq}";
-            
+
         }
     }
 }

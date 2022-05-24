@@ -30,13 +30,13 @@
                         <td>
                             <div class="form-group">
                                 <label for="bienA">Nhập mã mặt hàng:</label><br>
-                                <select name="MaMH" id="MaMatHang" class="form-control" onchange="getMatHang(this.value)">
+                                <select name="Ma_TenMH" id="MaMatHang" class="form-control" onchange="getMatHang(this.value)">
                                 @{
                                     <option value="" selected disabled hidden>Chọn Mã mặt hàng cần tìm ---</option>
                                     List<MATHANG> dsMatHang = LuuTruSanPham.DocDanhSachSanPham();
                                     foreach (MATHANG mh in dsMatHang)
                                     {
-                                        <option value="@mh.MaMH" >@mh.MaMH | @mh.TenMH | Giá tham chiếu @mh.Gia</option>
+                                        <option value="@mh.MaMH|@mh.TenMH" >@mh.MaMH | @mh.TenMH | Giá tham chiếu @mh.Gia</option>
                                     }
                                 }
                                  </select>
@@ -60,7 +60,7 @@
                         <td colspan="2">
                             <div class="form-group">
                                 <label for="bienB">Ngày lập hóa đơn:</label><br>
-                                <input type="date" class="form-control" name="NgayLap" value="@Model.A.NgayLap">
+                                <input type="date" class="form-control" name="NgayLap" value="@DateTime.Now.ToString("yyyy-MM-dd")">
                             </div>
                         </td>
                         <td colspan="2">

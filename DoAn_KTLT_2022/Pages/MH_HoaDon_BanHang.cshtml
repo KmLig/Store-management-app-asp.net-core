@@ -1,5 +1,5 @@
 ﻿@page
-@model DoAn_KTLT_2022.Pages.MH_HoaDon_NhapHangModel
+@model DoAn_KTLT_2022.Pages.MH_HoaDon_BanHangModel
 @using DoAn_KTLT_2022.Entities
 @using DoAn_KTLT_2022.Services
 @{
@@ -7,7 +7,7 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-8">
-            <h1 class="">Hóa đơn Nhập hàng <a href="/MH_Tao_HoaDon_NhapHang" class="btn btn-warning text-dark"><b>Thêm Hóa đơn mới +</b></a></h1>
+            <h1 class="">Hóa đơn Bán hàng <a href="/MH_Tao_HoaDon_BanHang" class="btn btn-warning text-dark"><b>Thêm Hóa đơn mới +</b></a></h1>
 
         </div>
         <div class="col-4">
@@ -29,7 +29,7 @@
         <th class=col->STT</th>
         <th class="col-">Mã Hóa đơn</th>        
         <th class="col-">Mã & Tên Mặt hàng</th>        
-        <th class="col-">Giá nhập</th>
+        <th class="col-">Giá bán</th>
         <th class="col-">Số lượng</th>
         <th class="col-">Ngày lập</th>
         <th class="col-">Thành tiền</th>
@@ -49,8 +49,8 @@
             <td>@Model.dsHoaDon[i].ThanhTien </td>
 
             <td>
-                <a href="/MH_XoaHoaDon_Nhap?index=@Model.dsHoaDon[i].MaHD" class="btn btn-danger">Xóa</a>
-                <a href="/MH_SuaHoaDon_Nhap?index=@Model.dsHoaDon[i].MaHD" class="btn btn-primary">Sửa</a>
+                <a href="/MH_XoaHoaDon_Ban?index=@Model.dsHoaDon[i].MaHD" class="btn btn-danger">Xóa</a>
+                <a href="/MH_SuaHoaDon_Ban?index=@Model.dsHoaDon[i].MaHD" class="btn btn-primary">Sửa</a>
             </td>
         </tr>
     }

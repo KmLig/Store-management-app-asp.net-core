@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfRGFuZ05oYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_HoaDon_BanHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfSG9hRG9uX0JhbkhhbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_HoaDon_NhapHang.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfSG9hRG9uX05oYXBIYW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -41,6 +45,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_MatHang.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfTWF0SGFuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_SuaHoaDon_Ban.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfU3VhSG9hRG9uX0Jhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_SuaHoaDon_Nhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfU3VhSG9hRG9uX05oYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_SuaLoaiHang.cshtml]
@@ -67,8 +79,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfVGFvX01hdEhhbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_XoaHoaDon.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfWG9hSG9hRG9uLmNzaHRtbA==
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_ThongKe_HetHan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfVGhvbmdLZV9IZXRIYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_ThongKe_TonKho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfVGhvbmdLZV9Ub25LaG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_XoaHoaDon_Ban.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfWG9hSG9hRG9uX0Jhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_XoaHoaDon_Nhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTUhfWG9hSG9hRG9uX05oYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CN-CNTT-FS/HK2/Kỹ thuật lập trình/Đồ án/DoAn_KTLT_2022/DoAn_KTLT_2022/Pages/MH_XoaLoaiHang.cshtml]

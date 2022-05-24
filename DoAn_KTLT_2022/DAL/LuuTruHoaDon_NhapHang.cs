@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace DoAn_KTLT_2022.DAL
 {
-    public class LuuTruHoaDon
+    public class LuuTruHoaDon_NhapHang
     {
         public static bool Luu(HOADON A)
         {
@@ -16,7 +16,7 @@ namespace DoAn_KTLT_2022.DAL
 
         public static List<HOADON> DocDanhSachHoaDon()
         {
-            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon.json");
+            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon_NhapHang.json");
             string jsonString = reader.ReadToEnd();
             reader.Close();
 
@@ -26,7 +26,7 @@ namespace DoAn_KTLT_2022.DAL
 
         public static bool LuuDanhSachHoaDon(List<HOADON> danhSachHoaDon)
         {
-            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon.json");
+            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon_NhapHang.json");
             string jsonString = JsonConvert.SerializeObject(danhSachHoaDon);
             writer.WriteLine(jsonString);
             writer.Close();
@@ -43,6 +43,21 @@ namespace DoAn_KTLT_2022.DAL
                 {
                     dsHD.RemoveAt(i);
                     LuuDanhSachHoaDon(dsHD);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool Sua(HOADON hd)
+        {
+            List<HOADON> dshd = DocDanhSachHoaDon();
+            for (int i = 0; i < dshd.Count; i++)
+            {
+                if (dshd[i].MaHD == hd.MaHD)
+                {
+                    dshd[i] = hd;
+                    LuuDanhSachHoaDon(dshd);
                     return true;
                 }
             }

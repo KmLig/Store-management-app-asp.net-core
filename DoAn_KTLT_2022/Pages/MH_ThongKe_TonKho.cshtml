@@ -1,5 +1,5 @@
 ﻿@page
-@model DoAn_KTLT_2022.Pages.MH_MatHangModel
+@model DoAn_KTLT_2022.Pages.MH_ThongKe_TonKhoModel
 @using DoAn_KTLT_2022.Entities
 @using DoAn_KTLT_2022.Services
 @using DoAn_KTLT_2022.DAL
@@ -7,7 +7,7 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-8">
-            <h1 class="">Mặt hàng <a href="/MH_Tao_MatHang" class="btn btn-warning text-dark"><b>Thêm mới mặt hàng +</b></a></h1>
+            <h1 class="">Thống kê Tồn kho</h1>
 
         </div>
         <div class="col-4">
@@ -24,7 +24,7 @@
 </div>
 <div class="container border border-secondary rounded text-center">
     <div class="row p-2">
-        <div class="col-12 p-3">
+        <div class="col-6 p-3">
             <p><b>Loại hàng</b></p>
             <form method="post">
                 <div class="form-group input-group mb-3">
@@ -43,7 +43,29 @@
                     </div>
                 </div>
             </form>
-        </div>   
+        </div>
+        <div class="col-6 p-3">
+            <p><b>Lượng tồn kho</b></p>
+            <form method="post">
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="ToanBo" name="SearchTonKho" value="ToanBo" checked>Toàn bộ
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="ConHang" name="SearchTonKho" value="ConHang">Còn hàng
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="HetHang" name="SearchTonKho" value="HetHang">Hết hàng
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success" value="">Tìm <i class="fa fa-search"></i></button>
+            </form>
+        </div>        
+
     </div>
 </div>
 
@@ -53,25 +75,20 @@
         <th>Tên MH</th>
         <th>Loại hàng</th>
         <th>Hạn SD</th>
-        <th>Công ty SX</th>
-        <th>Ngày SX</th>
-        <th>Giá </th>
-        <th>Thao tác</th>
+        <th>SL Nhập</th>
+        <th>SL Xuất</th>
+        <th>Tồn kho </th>        
     </tr>
-    @foreach (MATHANG sp in @Model.dsSanPham)
+    @for (int i = 0; i < @Model.dsSanPham.Count; i++)
     {
         <tr>
-            <td>@sp.MaMH</td>
-            <td>@sp.TenMH</td>
-            <td>@sp.LoaiHang</td>
-            <td>@sp.HanSD.ToShortDateString()</td>
-            <td>@sp.CtySX</td>
-            <td>@sp.NgaySX.ToShortDateString()</td>
-            <td>@sp.Gia</td>
-            <td>
-                <a href="/MH_XoaSanPham?id=@sp.MaMH" class="btn btn-danger">Xóa</a>
-                <a href="/MH_SuaSanPham?id=@sp.MaMH" class="btn btn-primary">Sửa</a>
-            </td>
+            <td>@Model.dsSanPham[i].MaMH</td>
+            <td>@Model.dsSanPham[i].TenMH</td>
+            <td>@Model.dsSanPham[i].LoaiHang</td>
+            <td>@Model.dsSanPham[i].HanSD.ToShortDateString()</td>
+            <td>@Model.Nhap[i]</td>
+            <td>@Model.Xuat[i]</td>
+            <td><b>@Model.TonKho[i]</b></td>            
         </tr>
     }
 </table>

@@ -27,7 +27,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark btn btn-dark text-white me-md-2" asp-area="" asp-page="/Index"><i class="fa fa-home"></i> Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_LoaiHang">Loại hàng</a>
                         </li>
                         <li class="nav-item">
@@ -83,4 +83,15 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<script>
+    $(document).ready(function () {
+        var url = window.location;
+        $('.navbar .nav').find('.active').removeClass('active');
+        $('.navbar .nav li a').each(function () {
+            if (this.href == url) {
+                $(this).parent().addClass('active');
+            }
+        }); 
+    });
+</script>
 </html>

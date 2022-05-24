@@ -1,1 +1,119 @@
-[{"MaMH":"Mh001","TenMH":"Air boost Soda","HanSD":"2022-08-06T00:00:00","CtySX":"AiBa","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Soft drinks","Gia":20},{"MaMH":"Mh003","TenMH":"Ví da nam LH","HanSD":"2030-01-01T00:00:00","CtySX":"Ví LHT","NgaySX":"2022-01-01T00:00:00","LoaiHang":"Ví","Gia":450},{"MaMH":"MH005","TenMH":"Sony XZ Premium","HanSD":"2022-06-23T00:00:00","CtySX":"Sony","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Smartphone/Laptop","Gia":8000},{"MaMH":"MH007","TenMH":"Ví da nam LHTH","HanSD":"2022-08-26T00:00:00","CtySX":"ABC","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Ví","Gia":7000},{"MaMH":"MH010","TenMH":"Currency war","HanSD":"2022-12-30T00:00:00","CtySX":"KTM","NgaySX":"2022-05-11T00:00:00","LoaiHang":"Book","Gia":900},{"MaMH":"MH200","TenMH":"DDL Mouse","HanSD":"2022-09-30T00:00:00","CtySX":"Rain Coater","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Mouse","Gia":400},{"MaMH":"Mh20","TenMH":"erere","HanSD":"0001-01-01T00:00:00","CtySX":"rere","NgaySX":"0001-01-01T00:00:00","LoaiHang":"Giày","Gia":2000},{"MaMH":"MH00554","TenMH":"Giày Oxford","HanSD":"2040-02-02T00:00:00","CtySX":"DF_GG","NgaySX":"2020-02-02T00:00:00","LoaiHang":"Giày","Gia":200},{"MaMH":"fgfgf","TenMH":"ABC Book","HanSD":"2022-09-03T00:00:00","CtySX":"THM Corp.","NgaySX":"2022-05-05T00:00:00","LoaiHang":"Book","Gia":100},{"MaMH":"MHCF001","TenMH":"Milk coffee","HanSD":"2022-06-17T00:00:00","CtySX":"KH Coffee","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Soft drinks","Gia":250},{"MaMH":"MHLT006","TenMH":"Dell Precisio","HanSD":"2022-09-30T00:00:00","CtySX":"Dell","NgaySX":"2022-05-10T00:00:00","LoaiHang":"Smartphone/Laptop","Gia":4000},{"MaMH":"Mh100","TenMH":"ALC Mouse","HanSD":"2022-06-11T00:00:00","CtySX":"ALC","NgaySX":"2022-05-03T00:00:00","LoaiHang":"Mouse","Gia":200},{"MaMH":"MH-N 887","TenMH":"Leather shoes","HanSD":"0001-01-01T00:00:00","CtySX":"TTMS Shoes","NgaySX":"0001-01-01T00:00:00","LoaiHang":"Shoes","Gia":800}]
+[
+  {
+    "MaMH": "Mh001",
+    "TenMH": "Air boost Soda",
+    "HanSD": "2022-08-06T00:00:00",
+    "CtySX": "AiBa",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Soft drinks",
+    "Gia": 20
+  },
+  {
+    "MaMH": "Mh003",
+    "TenMH": "Ví da nam LH",
+    "HanSD": "2030-01-01T00:00:00",
+    "CtySX": "Ví LHT",
+    "NgaySX": "2022-01-01T00:00:00",
+    "LoaiHang": "Ví",
+    "Gia": 450
+  },
+  {
+    "MaMH": "MH005",
+    "TenMH": "Sony XZ Premium",
+    "HanSD": "2022-06-23T00:00:00",
+    "CtySX": "Sony",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Smartphone/Laptop",
+    "Gia": 8000
+  },
+  {
+    "MaMH": "MH007",
+    "TenMH": "Ví da nam LHTH",
+    "HanSD": "2022-08-26T00:00:00",
+    "CtySX": "ABC",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Ví",
+    "Gia": 7000
+  },
+  {
+    "MaMH": "MH010",
+    "TenMH": "Currency war",
+    "HanSD": "2022-12-30T00:00:00",
+    "CtySX": "KTM",
+    "NgaySX": "2022-05-11T00:00:00",
+    "LoaiHang": "Book",
+    "Gia": 900
+  },
+  {
+    "MaMH": "MH200",
+    "TenMH": "DDL Mouse",
+    "HanSD": "2022-09-30T00:00:00",
+    "CtySX": "Rain Coater",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Mouse",
+    "Gia": 400
+  },
+  {
+    "MaMH": "Mh20",
+    "TenMH": "Coca",
+    "HanSD": "0001-01-01T00:00:00",
+    "CtySX": "REE-ABB",
+    "NgaySX": "0001-01-01T00:00:00",
+    "LoaiHang": "Soft drinks",
+    "Gia": 2000
+  },
+  {
+    "MaMH": "MH00554",
+    "TenMH": "Giày Oxford",
+    "HanSD": "2040-02-02T00:00:00",
+    "CtySX": "DF_GG",
+    "NgaySX": "2020-02-02T00:00:00",
+    "LoaiHang": "Giày",
+    "Gia": 200
+  },
+  {
+    "MaMH": "fgfgf",
+    "TenMH": "ABC Book",
+    "HanSD": "2022-09-03T00:00:00",
+    "CtySX": "THM Corp.",
+    "NgaySX": "2022-05-05T00:00:00",
+    "LoaiHang": "Book",
+    "Gia": 100
+  },
+  {
+    "MaMH": "MHCF001",
+    "TenMH": "Milk coffee",
+    "HanSD": "2022-06-17T00:00:00",
+    "CtySX": "KH Coffee",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Soft drinks",
+    "Gia": 250
+  },
+  {
+    "MaMH": "MHLT006",
+    "TenMH": "Dell Precisio",
+    "HanSD": "2022-09-30T00:00:00",
+    "CtySX": "Dell",
+    "NgaySX": "2022-05-10T00:00:00",
+    "LoaiHang": "Smartphone/Laptop",
+    "Gia": 4000
+  },
+  {
+    "MaMH": "Mh100",
+    "TenMH": "ALC Mouse",
+    "HanSD": "2022-06-11T00:00:00",
+    "CtySX": "ALC",
+    "NgaySX": "2022-05-03T00:00:00",
+    "LoaiHang": "Mouse",
+    "Gia": 200
+  },
+  {
+    "MaMH": "MH-N 887",
+    "TenMH": "Leather shoes",
+    "HanSD": "0001-01-01T00:00:00",
+    "CtySX": "TTMS Shoes",
+    "NgaySX": "0001-01-01T00:00:00",
+    "LoaiHang": "Shoes",
+    "Gia": 800
+  }
+]

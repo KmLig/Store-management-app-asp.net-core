@@ -5,7 +5,7 @@ using DoAn_KTLT_2022.Services;
 
 namespace DoAn_KTLT_2022.Pages
 {
-    public class MH_XoaHoaDonModel : PageModel
+    public class MH_XoaHoaDon_BanModel : PageModel
     {
         public HOADON HoaDon;
         public string Chuoi;
@@ -15,7 +15,7 @@ namespace DoAn_KTLT_2022.Pages
         public string Index { get; set; }        
         public void OnGet()
         {
-            HOADON? sp = XL_HoaDon.DocHoaDon(Index);
+            HOADON? sp = XL_HoaDon_BanHang.DocHoaDon(Index);
             if (sp != null)
             {
                 HoaDon = sp.Value;
@@ -29,7 +29,7 @@ namespace DoAn_KTLT_2022.Pages
         }
         public void OnPost()
         {
-            bool kq = XL_HoaDon.XoaHoaDon(Index);
+            bool kq = XL_HoaDon_BanHang.XoaHoaDon(Index);
             Chuoi = $"Ket qua la {kq}";
             //quay lai man hinh danh sach san pham
             Response.Redirect("/MH_HoaDon_NhapHang");
