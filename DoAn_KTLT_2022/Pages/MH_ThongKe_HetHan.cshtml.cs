@@ -10,6 +10,8 @@ namespace DoAn_KTLT_2022.Pages
     public class MH_ThongKe_HetHanModel : PageModel
     {
         public List<MATHANG> dsSanPham;
+        public string ConHan;
+        public string HetHan;
         [BindProperty]
         public string SearchHSD { get; set; }
         [BindProperty]
@@ -22,6 +24,8 @@ namespace DoAn_KTLT_2022.Pages
         public void OnGet()
         {
             dsSanPham = XL_MatHang.TimKiem(string.Empty);
+            ConHan = string.Empty;
+            HetHan = string.Empty;
         }
         public void OnPost()
         {
@@ -30,10 +34,12 @@ namespace DoAn_KTLT_2022.Pages
             if (SearchHSD == "conHSD")
             {
                 dsSanPham = XL_HetHan.TimConHSD();
+                ConHan = "OK";
             }
             else if (SearchHSD == "hetHSD")
             {
                 dsSanPham = XL_HetHan.TimHetHSD();
+                HetHan = "Expired";
             }
             else
             {

@@ -1,6 +1,6 @@
 [
   {
-    "MaMH": "Mh001",
+    "MaMH": "MH-SD-001",
     "TenMH": "Air boost Soda",
     "HanSD": "2022-08-06T00:00:00",
     "CtySX": "AiBa",
@@ -9,7 +9,7 @@
     "Gia": 20
   },
   {
-    "MaMH": "Mh003",
+    "MaMH": "MH-V-002",
     "TenMH": "Ví da nam LH",
     "HanSD": "2030-01-01T00:00:00",
     "CtySX": "Ví LHT",
@@ -18,7 +18,7 @@
     "Gia": 450
   },
   {
-    "MaMH": "MH005",
+    "MaMH": "MH-SP/LT-005",
     "TenMH": "Sony XZ Premium",
     "HanSD": "2022-06-23T00:00:00",
     "CtySX": "Sony",
@@ -27,7 +27,7 @@
     "Gia": 8000
   },
   {
-    "MaMH": "MH007",
+    "MaMH": "MH-V-007",
     "TenMH": "Ví da nam LHTH",
     "HanSD": "2022-08-26T00:00:00",
     "CtySX": "ABC",
@@ -36,7 +36,7 @@
     "Gia": 7000
   },
   {
-    "MaMH": "MH010",
+    "MaMH": "MH-B-010",
     "TenMH": "Currency war",
     "HanSD": "2022-12-30T00:00:00",
     "CtySX": "KTM",
@@ -45,7 +45,7 @@
     "Gia": 900
   },
   {
-    "MaMH": "MH200",
+    "MaMH": "MH-SP/LT-200",
     "TenMH": "DDL Mouse",
     "HanSD": "2022-09-30T00:00:00",
     "CtySX": "Rain Coater",
@@ -54,16 +54,16 @@
     "Gia": 400
   },
   {
-    "MaMH": "Mh20",
+    "MaMH": "MH-SD-20",
     "TenMH": "Coca",
-    "HanSD": "0001-01-01T00:00:00",
+    "HanSD": "2022-05-10T00:00:00",
     "CtySX": "REE-ABB",
-    "NgaySX": "0001-01-01T00:00:00",
+    "NgaySX": "2022-01-24T00:00:00",
     "LoaiHang": "Soft drinks",
     "Gia": 2000
   },
   {
-    "MaMH": "MH00554",
+    "MaMH": "MH-SH-554",
     "TenMH": "Giày Oxford",
     "HanSD": "2040-02-02T00:00:00",
     "CtySX": "DF_GG",
@@ -72,16 +72,7 @@
     "Gia": 200
   },
   {
-    "MaMH": "fgfgf",
-    "TenMH": "ABC Book",
-    "HanSD": "2022-09-03T00:00:00",
-    "CtySX": "THM Corp.",
-    "NgaySX": "2022-05-05T00:00:00",
-    "LoaiHang": "Book",
-    "Gia": 100
-  },
-  {
-    "MaMH": "MHCF001",
+    "MaMH": "MH-SD-225",
     "TenMH": "Milk coffee",
     "HanSD": "2022-06-17T00:00:00",
     "CtySX": "KH Coffee",
@@ -90,7 +81,7 @@
     "Gia": 250
   },
   {
-    "MaMH": "MHLT006",
+    "MaMH": "MH-SP/LT-006",
     "TenMH": "Dell Precisio",
     "HanSD": "2022-09-30T00:00:00",
     "CtySX": "Dell",
@@ -99,7 +90,7 @@
     "Gia": 4000
   },
   {
-    "MaMH": "Mh100",
+    "MaMH": "MH-SP/LT-002",
     "TenMH": "ALC Mouse",
     "HanSD": "2022-06-11T00:00:00",
     "CtySX": "ALC",
@@ -108,12 +99,21 @@
     "Gia": 200
   },
   {
-    "MaMH": "MH-N 887",
+    "MaMH": "MH-SH-887",
     "TenMH": "Leather shoes",
-    "HanSD": "0001-01-01T00:00:00",
+    "HanSD": "2022-05-10T00:00:00",
     "CtySX": "TTMS Shoes",
-    "NgaySX": "0001-01-01T00:00:00",
-    "LoaiHang": "Shoes",
+    "NgaySX": "2021-09-24T00:00:00",
+    "LoaiHang": "Soft drinks",
     "Gia": 800
+  },
+  {
+    "MaMH": "MH-TC-001",
+    "TenMH": "Medium Glass Tea Cup",
+    "HanSD": "2022-11-24T00:00:00",
+    "CtySX": "NNC Glass",
+    "NgaySX": "2022-05-10T00:00:00",
+    "LoaiHang": "Tea cup",
+    "Gia": 100
   }
 ]

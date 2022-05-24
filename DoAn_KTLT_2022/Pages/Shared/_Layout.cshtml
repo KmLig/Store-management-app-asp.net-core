@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DoAn_KTLT_2022.styles.css" asp-append-version="true" />
+    <style>
+        li a:active{
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,22 +33,22 @@
                             <a class="nav-link text-dark btn btn-dark text-white me-md-2" asp-area="" asp-page="/Index"><i class="fa fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_LoaiHang">Loại hàng</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_LoaiHang">Loại hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_MatHang">Mặt hàng</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_MatHang">Mặt hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_HoaDon_NhapHang">Hóa đơn nhập</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_HoaDon_NhapHang">Hóa đơn nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_HoaDon_BanHang">Hóa đơn bán</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_HoaDon_BanHang">Hóa đơn bán</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_ThongKe_TonKho">Thống kê tồn kho</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_ThongKe_TonKho">Thống kê tồn kho</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-outline-success me-md-2" asp-area="" asp-page="/MH_ThongKe_HetHan">Thống kê hết hạn</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_ThongKe_HetHan">Thống kê hết hạn</a>
                         </li>
                         
                     </ul>
@@ -84,14 +89,24 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <script>
+    //set navbar item as active when user selects it
     $(document).ready(function () {
-        var url = window.location;
-        $('.navbar .nav').find('.active').removeClass('active');
-        $('.navbar .nav li a').each(function () {
-            if (this.href == url) {
-                $(this).parent().addClass('active');
-            }
-        }); 
-    });
+            /*var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length-1];
+            $('.navbar-nav').find('.active').removeClass('active');
+            $('.navbar-nav li a').each(function () {
+                if (this.href.indexOf(urlaspx) >= 0) {
+                    $(this).addClass('active');                    
+                }
+            });*/
+            var url = window.location;
+            $('.navbar-nav .nav-item').find('.active').removeClass('active');
+            $('.navbar-nav li a').each(function () {
+                if (this.href == url) {
+                    $(this).addClass('active');
+                }
+            }); 
+     });
 </script>
 </html>
