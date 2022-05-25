@@ -73,7 +73,7 @@
         <th>Công ty SX</th>
         <th>Ngày SX</th>
         <th>Giá </th>
-        <th>Thao tác</th>
+        <th>HSD</th>
     </tr>
     @foreach (MATHANG sp in @Model.dsSanPham)
     {
@@ -86,6 +86,7 @@
             <td>@sp.NgaySX.ToShortDateString()</td>
             <td>@sp.Gia</td>
             <td>
+                @Model.ConHan
                 @Model.HetHan
             </td>
         </tr>

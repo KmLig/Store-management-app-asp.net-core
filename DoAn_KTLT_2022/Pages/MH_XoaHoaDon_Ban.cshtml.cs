@@ -32,7 +32,7 @@ namespace DoAn_KTLT_2022.Pages
             bool kq = XL_HoaDon_BanHang.XoaHoaDon(Index);
             Chuoi = $"Ket qua la {kq}";
             //quay lai man hinh danh sach san pham
-            Response.Redirect("/MH_HoaDon_NhapHang");
+            Response.Redirect("/MH_HoaDon_BanHang");
             
         }
     }

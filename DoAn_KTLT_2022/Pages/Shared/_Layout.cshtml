@@ -30,25 +30,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-dark text-white me-md-2" asp-area="" asp-page="/Index"><i class="fa fa-home"></i> Home</a>
+                            <a class="nav-link text-dark btn btn-dark text-white me-md-2 rounded-pill" asp-area="" asp-page="/Index"><i class="fa fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_LoaiHang">Loại hàng</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_LoaiHang">Loại hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_MatHang">Mặt hàng</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_MatHang">Mặt hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_HoaDon_NhapHang">Hóa đơn nhập</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_HoaDon_NhapHang">Hóa đơn nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_HoaDon_BanHang">Hóa đơn bán</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_HoaDon_BanHang">Hóa đơn bán</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_ThongKe_TonKho">Thống kê tồn kho</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_ThongKe_TonKho">Thống kê tồn kho</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-warning me-md-2" asp-area="" asp-page="/MH_ThongKe_HetHan">Thống kê hết hạn</a>
+                            <a class="nav-link btn btn-outline-warning me-md-2 rounded-pill" asp-area="" asp-page="/MH_ThongKe_HetHan">Thống kê hết hạn</a>
                         </li>
                         
                     </ul>
@@ -90,16 +90,7 @@
 </body>
 <script>
     //set navbar item as active when user selects it
-    $(document).ready(function () {
-            /*var url = window.location.pathname;
-            var substr = url.split('/');
-            var urlaspx = substr[substr.length-1];
-            $('.navbar-nav').find('.active').removeClass('active');
-            $('.navbar-nav li a').each(function () {
-                if (this.href.indexOf(urlaspx) >= 0) {
-                    $(this).addClass('active');                    
-                }
-            });*/
+    $(document).ready(function () {            
             var url = window.location;
             $('.navbar-nav .nav-item').find('.active').removeClass('active');
             $('.navbar-nav li a').each(function () {
