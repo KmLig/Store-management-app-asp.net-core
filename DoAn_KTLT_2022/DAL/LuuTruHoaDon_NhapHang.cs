@@ -16,7 +16,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static List<HOADON> DocDanhSachHoaDon()
         {
-            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon_NhapHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\HoaDon_NhapHang.json";
+            StreamReader reader = new StreamReader(filePath_Read);
             string jsonString = reader.ReadToEnd();
             reader.Close();
 
@@ -26,7 +28,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static bool LuuDanhSachHoaDon(List<HOADON> danhSachHoaDon)
         {
-            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\HoaDon_NhapHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\HoaDon_NhapHang.json";
+            StreamWriter writer = new StreamWriter(filePath_Read);
             string jsonString = JsonConvert.SerializeObject(danhSachHoaDon);
             writer.WriteLine(jsonString);
             writer.Close();

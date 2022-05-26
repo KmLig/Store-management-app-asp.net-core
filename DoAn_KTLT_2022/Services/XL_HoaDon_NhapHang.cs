@@ -70,26 +70,35 @@ namespace DoAn_KTLT_2022.Services
             }
             return false;
         }
-
-        public static bool SuaHoaDon(string id, string MaHD, string MaMH, string TenMH, int Gia, int SL, DateTime NgayLap, int ThanhTien)
+        public static bool KiemTraThieuMatHangHoaDon(List<MATHANGHOADON> Sp)
         {
-            if (string.IsNullOrEmpty(id) ||
-                string.IsNullOrEmpty(MaHD) ||
-                string.IsNullOrEmpty(MaMH) ||
-                Gia <= 0 ||
-                SL <= 0)
+            for (int i = 0; i < Sp.Count; i++)
+            {
+                if(string.IsNullOrEmpty(Sp[i].MaMH) ||
+                    string.IsNullOrEmpty(Sp[i].TenMH) ||
+                    Sp[i].Gia <= 0 ||
+                    Sp[i].SL <= 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool SuaHoaDon(string MaHD, List<MATHANGHOADON> Sp, DateTime NgayLap, int ThanhTien)
+        {
+            if (string.IsNullOrEmpty(MaHD) ||
+                !KiemTraThieuMatHangHoaDon(Sp) ||
+                ThanhTien <= 0)
             {
                 return false;
             }
-            HOADON? hd = DocHoaDon(id);
+            HOADON? hd = DocHoaDon(MaHD);
             if (hd != null)
             {
                 HOADON hdMoi;
-                hdMoi.MaHD = id;
-                hdMoi.MaMH = MaMH;
-                hdMoi.TenMH = TenMH;
-                hdMoi.Gia = Gia;
-                hdMoi.SL = SL;
+                hdMoi.MaHD = MaHD;
+                hdMoi.SanPham = Sp;                
                 hdMoi.NgayLap = NgayLap;
                 hdMoi.ThanhTien = ThanhTien;
                 LuuTruHoaDon_NhapHang.Sua(hdMoi);

@@ -16,7 +16,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static List<NGUOIDUNG> DocDanhSachNguoiDung()
         {
-            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\KTLT\\Lưu\\NguoiDung.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\NguoiDung.json";
+            StreamReader reader = new StreamReader(filePath_Read);
             string jsonString = reader.ReadToEnd();
             reader.Close();
 
@@ -26,7 +28,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static bool LuuDanhSachNguoiDung(List<NGUOIDUNG> danhSachNguoiDung)
         {
-            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\KTLT\\Lưu\\NguoiDung.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\NguoiDung.json";
+            StreamWriter writer = new StreamWriter(filePath_Read);
             string jsonString = JsonConvert.SerializeObject(danhSachNguoiDung);
             writer.WriteLine(jsonString);
             writer.Close();

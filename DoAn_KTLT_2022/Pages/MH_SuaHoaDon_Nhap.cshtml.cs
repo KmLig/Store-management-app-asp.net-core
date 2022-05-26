@@ -45,11 +45,23 @@ namespace DoAn_KTLT_2022.Pages
         }
         public void OnPost()
         {
-            string[] vs = Ma_TenMH.Split('|');
-            string MaMH = vs[0];
-            string TenMH = vs[1];
-            ThanhTien = Gia*SL;
-            bool kq = XL_HoaDon_NhapHang.SuaHoaDon(Index, Index, MaMH, TenMH, Gia, SL, NgayLap, ThanhTien);
+            A.MaHD = MaHD;
+            A.SanPham = new List<MATHANGHOADON>();
+            int nMucNhap = Request.Form["MatHangHoaDon"].Count;
+            for (int i = 0; i < nMucNhap; i++)
+            {
+                MATHANGHOADON Sp = new MATHANGHOADON();
+                string[] Ma_TenMH = Request.Form["MatHangHoaDon"][i].Split('|');
+                Sp.MaMH = Ma_TenMH[0];
+                Sp.TenMH = Ma_TenMH[1];
+                Sp.SL = int.Parse(Request.Form["SL"][i]);
+                Sp.Gia = int.Parse(Request.Form["Gia"][i]);
+                ThanhTien += Sp.SL * Sp.Gia;
+                A.SanPham.Add(Sp);
+            }
+            A.ThanhTien = ThanhTien;
+            A.NgayLap = NgayLap;
+            bool kq = XL_HoaDon_NhapHang.SuaHoaDon(Index, A.SanPham, NgayLap, ThanhTien);
             Chuoi = $"Modify a product: {kq}";
             //quay lai man hinh danh sach san pham
             if (kq)

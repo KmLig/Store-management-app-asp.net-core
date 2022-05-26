@@ -15,7 +15,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static List<string> DocDanhSachLoaiHang()
         {
-            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\LoaiHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\LoaiHang.json";
+            StreamReader reader = new StreamReader(filePath_Read);
             string jsonString = reader.ReadToEnd();
             reader.Close();
 
@@ -25,7 +27,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static bool LuuDanhSachLoaiHang(List<string> dsLoaiHang)
         {
-            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\LoaiHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\LoaiHang.json";
+            StreamWriter writer = new StreamWriter(filePath_Read);
             string jsonString = JsonConvert.SerializeObject(dsLoaiHang);
             writer.WriteLine(jsonString);
             writer.Close();

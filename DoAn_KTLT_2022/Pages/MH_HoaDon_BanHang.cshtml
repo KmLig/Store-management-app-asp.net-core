@@ -28,7 +28,8 @@
     <tr>       
         <th class=col->STT</th>
         <th class="col-">Mã Hóa đơn</th>        
-        <th class="col-">Mã & Tên Mặt hàng</th>        
+        <th class="col-">Mã Mặt hàng</th>        
+        <th class="col-">Tên Mặt hàng</th>        
         <th class="col-">Giá bán</th>
         <th class="col-">Số lượng</th>
         <th class="col-">Ngày lập</th>
@@ -42,9 +43,42 @@
         <tr> 
             <td>@j</td>
             <td>@Model.dsHoaDon[i].MaHD</td>
-            <td>@Model.dsHoaDon[i].MaMH || @Model.dsHoaDon[i].TenMH </td>
-            <td>@Model.dsHoaDon[i].Gia </td>
-            <td>@Model.dsHoaDon[i].SL </td>
+            
+                <td>
+                    @for(int k = 0; k < @Model.dsHoaDon[i].SanPham.Count; k++)
+                    {
+                    @Model.dsHoaDon[i].SanPham[k].MaMH 
+                    <br \>
+                     }
+                </td>
+           
+            
+                <td>
+                    @for(int k = 0; k < @Model.dsHoaDon[i].SanPham.Count; k++)
+                    {
+                    @Model.dsHoaDon[i].SanPham[k].TenMH 
+                    <br \>
+                    }
+                </td>
+            
+           
+                <td>
+                     @for(int k = 0; k < @Model.dsHoaDon[i].SanPham.Count; k++)
+                    {
+                    @Model.dsHoaDon[i].SanPham[k].Gia 
+                    <br \>
+                    }
+                </td>
+            
+            
+                <td>
+                    @for(int k = 0; k < @Model.dsHoaDon[i].SanPham.Count; k++)
+                     {
+                    @Model.dsHoaDon[i].SanPham[k].SL 
+                    <br \>
+                     }
+                </td>
+                       
             <td>@Model.dsHoaDon[i].NgayLap.ToShortDateString() </td>
             <td>@Model.dsHoaDon[i].ThanhTien </td>
 

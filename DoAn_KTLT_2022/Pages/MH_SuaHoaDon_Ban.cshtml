@@ -4,113 +4,162 @@
 @using DoAn_KTLT_2022.Services
 @using DoAn_KTLT_2022.DAL;
 @{
+    List<MATHANG> dsMatHang = LuuTruSanPham.DocDanhSachSanPham();
+
 }
-@if (@Model.coHoaDon)
-{
-    <div class="contaiern">
-        <h1>Hóa đơn Nhập hàng</h1>
-    </div>
+<div class="contaiern">
+    <h1>Sửa hóa đơn Bán hàng</h1>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class=" border bg-light rounded p-3">
-                <form method="post" id="frmSelecMaMatHang">
-                    <table class="table table-dark table-striped table-hover mt-4 text-center">
+<div class="container">
+    <div class="row">
+        <div class=" border bg-light rounded p-3">
+            <form method="post" id="frmSelecMaMatHang">
+                <table class="table table-dark table-striped table-hover mt-4 text-center" id="displayTable">
+                    <tr>
+                        <th class="col-1">STT</th>
+                        <th class="col-7">Mã mặt hàng</th>
+                        <th class="col-2">Số lượng</th>
+                        <th class="col-2">Giá</th>
+                    </tr>
+                    @for(int i = 0; i < @Model.A.SanPham.Count; i++)
+                    {
+                        int j = i + 1;
                         <tr>
-                            <th class="col-3">Mã hóa đơn</th>
-                            <th class="col-5">Mã mặt hàng</th>                        
-                            <th class="col-2">Số lượng</th>
-                            <th class="col-2">Giá</th>
-                        </tr>
-                        <tr>
-                            <td>                            
-                                <div class="form-group">
-                                    <label for="bienA">Nhập mã Hóa đơn:</label><br>
-                                    <input type="text" class="form-control" name="MaHD" value="@Model.A.MaHD" disabled>
-                                </div>
-                            </td>
                             <td>
-                                <div class="form-group">
-                                    <label for="bienA">Nhập mã mặt hàng:</label><br>
-                                    <select name="Ma_TenMH" id="MaMatHang" class="form-control" onchange="getMatHang(this.value)">
-                                        @{
-                                            <option value="" selected disabled hidden>Chọn Mã mặt hàng cần tìm ---</option>
-                                            List<MATHANG> dsMatHang = LuuTruSanPham.DocDanhSachSanPham();
-                                            foreach (MATHANG mh in dsMatHang)
-                                            {
-                                                <option value="@mh.MaMH|@mh.TenMH" >@mh.MaMH | @mh.TenMH | Giá tham chiếu @mh.Gia</option>
-                                            }
+                            <div class="form-group">
+                                    <label for="STT">STT</label><br>
+                                    <input type="number" class="form-control text-center" name="STT" value="@j" disabled>
+                                </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="bienA">Nhập mã mặt hàng:</label><br>
+                                <select name="MatHangHoaDon" id="MatHangHoaDon" class="form-control" onchange="getMatHang(this.value)">
+                                    @{
+                                        <option value="" selected disabled hidden>Chọn Mã mặt hàng cần tìm ---</option>                                        
+                                        foreach (MATHANG mh in dsMatHang)
+                                        {
+                                        <option value="@mh.MaMH|@mh.TenMH">@mh.MaMH | @mh.TenMH | Giá tham chiếu @mh.Gia</option>
                                         }
-                                    </select>
-                                </div>
-                            </td>                        
-                            <td>
-                                <div class="form-group">
-                                    <label for="bienB">Nhập số lượng:</label><br>
-                                    <input type="number" id="SL" class="form-control" name="SL" value="@Model.A.SL" oninput="getSL(this.value)" onchange="TinhTien();">
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label for="bienB">Giá bán:</label><br>
-                                    <input type="number" id="Gia" class="form-control" name="Gia" value="@Model.A.Gia" oninput="getGia(this.value)" onchange="TinhTien();">
-                                </div>
-                            </td>
+                                    }
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="bienB">Nhập số lượng:</label><br>
+                                <input type="number" class="form-control" name="SL" value="@Model.A.SanPham[i].SL" onchange="TinhTien();">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="bienB">Giá bán:</label><br>
+                                <input type="number" class="form-control" name="Gia" value="@Model.A.SanPham[i].Gia" onchange="TinhTien();">
+                            </div>
+                        </td>
 
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <div class="form-group">
-                                    <label for="bienB">Ngày lập hóa đơn:</label><br>
-                                    <input type="date" class="form-control" name="NgayLap" value="@DateTime.Now.ToString("yyyy-MM-dd")">
-                                </div>
-                            </td>
-                            <td colspan="2">
-                                <div class="form-group">
-                                    <label for="bienB">Thành tiền:</label><br>
-                                    <input type="text" id="ThanhTien" class="form-control" name="ThanhTien" value="@Model.A.ThanhTien" disabled>
-                                </div>
-                            </td>
-                        </tr>                    
-                    </table>                
-                    <br />
-                    <div class="form-group">
-                        <input type="submit" class="form-control btn btn-warning mb-2" value="Lưu"><br />
-                    </div>
-                </form>
-            </div>
+                    </tr>    
+                    }
+                    
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label for="bienA">Mã Hóa đơn đang sửa:</label><br>
+                                <input type="text" class="form-control" name="MaHD" value="@Model.A.MaHD" disabled>
+                            </div>
+                        </td>                                              
+                        <td>
+                            <div class="form-group">
+                                <label for="bienB">Ngày lập hóa đơn:</label><br>
+                                <input type="date" class="form-control" name="NgayLap" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="bienB">Thành tiền:</label><br>                                
+                                <input type="text" id="ThanhTien" class="form-control" name="ThanhTien" value="@Model.A.ThanhTien" disabled>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div class="form-group">
+                    <input type="submit" class="form-control btn btn-warning mb-2" value="Lưu"><br />
+                </div>
+            </form>
         </div>
     </div>
-}
+</div>
+
 <div class="text-danger">
     <b>@Model.Chuoi</b>
 </div>
 
-<script>    
-    var sl = document.getElementById('SL');
-    var gia = document.getElementById('Gia');
-    var matHang = document.getElementById('MaMatHang');
-    function getMatHang(value){
-        matHang = value;
-        console.log(matHang);
-    }
-    function getSL(value){
-        sl = value; 
-    }
-    function getGia(value){
-        gia = value;
-    }
-    function TinhTien(){        
-
-        let tinhTien = parseInt(sl)*parseInt(gia);
-
+<script>
+    let i = 1;  
+    
+    function TinhTien(){
+        const sl = document.getElementsByName('SL');    
+        const gia = document.getElementsByName('Gia');
+        
+        let s = 0;
+        
+        for(let k = 0; k < i; k++){
+            let SoLuong = parseInt(sl[k].value);
+            let Gia = parseInt(gia[k].value);          
+            s += SoLuong*Gia;
+            console.log(s);
+        }        
         let thanhTien = document.getElementById('ThanhTien');
-        thanhTien.value = tinhTien;
+        thanhTien.value = s;
+    }
+    
+    
+    function AddRow() {
+        let table = document.getElementById("displayTable");
+        i++;
+        let row = table.insertRow(i);
+        cell0 = row.insertCell(0);
+        cell0.innerHTML = `<td>                            
+                                <div class="form-group">
+                                    <label for="STT">STT:</label><br>
+                                    <input type="number" class="form-control text-center" name="STT" value="${i}" disabled>
+                                </div>
+                            </td>`
+        cell1 = row.insertCell(1);
+        cell1.innerHTML =  `<td>
+                            <div class="form-group">
+                                <label for="bienA">Nhập mã mặt hàng:</label><br>
+                                <select name="MatHangHoaDon" id="MatHangHoaDon" class="form-control" onchange="getMatHang(this.value)">
+                                    @{
+                                        <option value="" selected disabled hidden>Chọn Mã mặt hàng cần tìm ---</option>                                        
+                                        foreach (MATHANG mh in dsMatHang)
+                                        {
+                                            <option value="@mh.MaMH|@mh.TenMH">@mh.MaMH | @mh.TenMH | Giá tham chiếu @mh.Gia</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </td>`
+        cell2 = row.insertCell(2);
+        cell2.innerHTML = `<td>
+                            <div class="form-group">
+                                <label for="bienB">Nhập số lượng:</label><br>
+                                <input type="number" id="SL" class="form-control" name="SL" value="" oninput="getSL(this.value)" onchange="TinhTien();">
+                            </div>
+                        </td>`
+        cell3 = row.insertCell(3);
+        cell3.innerHTML = `<td>
+                            <div class="form-group">
+                                <label for="bienB">Giá nhập:</label><br>
+                                <input type="number" id="Gia" class="form-control" name="Gia" value="" oninput="getGia(this.value)" onchange="TinhTien();">
+                            </div>
+                        </td>`
     }
 
-  
 
 </script>
 
-    
-  
+
+

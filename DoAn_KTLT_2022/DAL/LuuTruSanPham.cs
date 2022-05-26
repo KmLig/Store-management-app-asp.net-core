@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace DoAn_KTLT_2022.DAL
 {
     public class LuuTruSanPham
-    {
+    {        
         public static bool Luu(MATHANG A)
         {
             List<MATHANG> danhSachSanPham = DocDanhSachSanPham();
@@ -16,7 +16,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static List<MATHANG> DocDanhSachSanPham()
         {
-            StreamReader reader = new StreamReader("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\MatHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\MatHang.json";
+            StreamReader reader = new StreamReader(filePath_Read);
             string jsonString = reader.ReadToEnd();
             reader.Close();
 
@@ -26,7 +28,9 @@ namespace DoAn_KTLT_2022.DAL
 
         public static bool LuuDanhSachSanPham(List<MATHANG> danhSachSanPham)
         {
-            StreamWriter writer = new StreamWriter("D:\\CN-CNTT-FS\\HK2\\Kỹ thuật lập trình\\Đồ án\\DoAn_KTLT_2022\\DoAn_KTLT_2022\\bin\\Data\\MatHang.json");
+            string deskDir = Environment.CurrentDirectory + "\\bin\\Data";
+            string filePath_Read = $"{deskDir}\\MatHang.json";
+            StreamWriter writer = new StreamWriter(filePath_Read);
             string jsonString = JsonConvert.SerializeObject(danhSachSanPham);
             writer.WriteLine(jsonString);
             writer.Close();

@@ -13,13 +13,16 @@ namespace DoAn_KTLT_2022.Services
             {
                 for (int j = 0; j < dshdNhap.Count; j++)
                 {
-                    if(dssp[i].MaMH == dshdNhap[j].MaMH)
+                    for (int k = 0; k < dshdNhap[j].SanPham.Count; k++)
                     {
-                        SLNhap[i] += dshdNhap[j].SL; 
-                    }
-                    else
-                    {
-                        SLNhap[i] += 0;
+                        if (dssp[i].MaMH == dshdNhap[j].SanPham[k].MaMH)
+                        {
+                            SLNhap[i] += dshdNhap[j].SanPham[k].SL;
+                        }
+                        else
+                        {
+                            SLNhap[i] += 0;
+                        }
                     }
                 }
             }
@@ -33,14 +36,17 @@ namespace DoAn_KTLT_2022.Services
             {
                 for (int j = 0; j < dshdBan.Count; j++)
                 {
-                    if (dssp[i].MaMH == dshdBan[j].MaMH)
+                    for (int k = 0; k < dshdBan[j].SanPham.Count; k++)
                     {
-                        SLBan[i] += dshdBan[j].SL;
-                    }
-                    else
-                    {
-                        SLBan[i] += 0;
-                    }
+                        if (dssp[i].MaMH == dshdBan[j].SanPham[k].MaMH)
+                        {
+                            SLBan[i] += dshdBan[j].SanPham[k].SL;
+                        }
+                        else
+                        {
+                            SLBan[i] += 0;
+                        }
+                    }                    
                 }
             }
             return SLBan;
