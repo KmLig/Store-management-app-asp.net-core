@@ -5,7 +5,8 @@ namespace DoAn_KTLT_2022.Services
 {
     public class XL_TonKho
     {
-        public static int[] KiemTraSLNhap(List<MATHANG> dssp)        {
+        public static int[] KiemTraSLNhap(List<MATHANG> dssp)        
+        {
             
             List<HOADON> dshdNhap = LuuTruHoaDon_NhapHang.DocDanhSachHoaDon();
             int[] SLNhap = new int[dssp.Count];
@@ -30,7 +31,7 @@ namespace DoAn_KTLT_2022.Services
         }
         public static int[] KiemTraSLXuat(List<MATHANG> dssp)
         {            
-            List<HOADON> dshdBan = LuuTruHoaDon_BanHang.DocDanhSachHoaDon();
+            List<HOADON> dshdBan = LuuTruHoaDon_BanHang.DocDanhSachHoaDon();            
             int[] SLBan = new int[dssp.Count];
             for (int i = 0; i < dssp.Count; i++)
             {
@@ -53,10 +54,11 @@ namespace DoAn_KTLT_2022.Services
         }
         public static int[] KiemTraTonKho(int[] Nhap, int[] Xuat)
         {
+            List<MATHANG> dssp = LuuTruSanPham.DocDanhSachSanPham();
             int[] TonKho = new int[Nhap.Length];
             for (int i = 0; i < Nhap.Length; i++)
             {
-                TonKho[i] = Nhap[i] - Xuat[i];
+                TonKho[i] = Nhap[i] - Xuat[i];                      
             }
             return TonKho;
         }

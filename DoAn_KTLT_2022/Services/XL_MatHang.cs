@@ -86,6 +86,7 @@ namespace DoAn_KTLT_2022.Services
                 spMoi.NgaySX = ngaySX;
                 spMoi.LoaiHang = loaiHang;
                 spMoi.Gia = gia;
+                spMoi.TonKho = 0;
                 LuuTruSanPham.Sua(spMoi);
                 return true;
             }            

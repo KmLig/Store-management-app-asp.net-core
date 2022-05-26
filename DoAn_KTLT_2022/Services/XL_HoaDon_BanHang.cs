@@ -7,8 +7,8 @@ namespace DoAn_KTLT_2022.Services
         public static bool TaoHoaDon(HOADON A)
         {
             if (string.IsNullOrWhiteSpace(A.MaHD) ||
-                //string.IsNullOrWhiteSpace(A.MaMH) ||               
-                //A.Gia <= 0 || A.SL <= 0 || 
+                !KiemTraThieuMatHangHoaDon(A.SanPham) ||
+                !KiemTraConHang(A.SanPham) ||
                 A.ThanhTien <= 0)
             {
                 return false;
@@ -23,7 +23,41 @@ namespace DoAn_KTLT_2022.Services
                     return false;
                 }
             }
+            TruDiTonKho(A.SanPham);
             return LuuTruHoaDon_BanHang.Luu(A);
+        }
+        public static bool TruDiTonKho(List<MATHANGHOADON> sp)
+        {
+            List<MATHANG> dssp = LuuTruSanPham.DocDanhSachSanPham();
+            for (int i = 0; i < dssp.Count; i++)
+            {
+                for (int j = 0; j < sp.Count; j++)
+                {
+                    if (dssp[i].MaMH == sp[j].MaMH)
+                    {
+                        MATHANG newMH = dssp[i];
+                        newMH.TonKho -= sp[j].SL;
+                        dssp[i] = newMH;
+                    }
+                }
+            }
+            LuuTruSanPham.LuuDanhSachSanPham(dssp);
+            return true;
+        }
+        public static bool KiemTraConHang(List<MATHANGHOADON> sp)
+        {
+            List<MATHANG> dssp = LuuTruSanPham.DocDanhSachSanPham();
+            for (int i = 0; i < dssp.Count; i++)
+            {
+                for (int j = 0; j < sp.Count; j++)
+                {
+                    if (dssp[i].MaMH == sp[j].MaMH && dssp[i].TonKho < sp[j].SL)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public static List<HOADON> TimKiemHoaDon(string tuKhoa)

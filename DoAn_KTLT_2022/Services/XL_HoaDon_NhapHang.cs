@@ -7,9 +7,8 @@ namespace DoAn_KTLT_2022.Services
         public static bool TaoHoaDon(HOADON A)
         {
             if (string.IsNullOrWhiteSpace(A.MaHD) ||
-                //string.IsNullOrWhiteSpace(A.MaMH) ||               
-                //A.Gia <= 0 || A.SL <= 0 || 
-                A.ThanhTien <= 0)
+                !KiemTraThieuMatHangHoaDon(A.SanPham) ||    
+               A.ThanhTien <= 0)
             {
                 return false;
             }
@@ -23,8 +22,9 @@ namespace DoAn_KTLT_2022.Services
                     return false;
                 }
             }
+            ThemVaoTonKho(A.SanPham);
             return LuuTruHoaDon_NhapHang.Luu(A);
-        }
+        }        
 
         public static List<HOADON> TimKiemHoaDon(string tuKhoa)
         {
@@ -40,6 +40,25 @@ namespace DoAn_KTLT_2022.Services
             }
             return kq;
         }
+        public static bool ThemVaoTonKho(List<MATHANGHOADON> sp)
+        {
+            List<MATHANG> dssp = LuuTruSanPham.DocDanhSachSanPham();
+            for (int i = 0; i < dssp.Count; i++)
+            {
+                for (int j = 0; j < sp.Count; j++)
+                {
+                    if(dssp[i].MaMH == sp[j].MaMH)
+                    {
+                        MATHANG newMH = dssp[i];
+                        newMH.TonKho = sp[j].SL;
+                        dssp[i] = newMH;
+                    }
+                }
+            }
+            LuuTruSanPham.LuuDanhSachSanPham(dssp);
+            return true;
+        }
+        
         public static HOADON? DocHoaDon(string id)
         {
             if (string.IsNullOrEmpty(id))

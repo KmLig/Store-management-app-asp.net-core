@@ -11,5 +11,6 @@
         public DateTime NgaySX;
         public string LoaiHang;
         public int Gia;
+        public int TonKho;
     }
 }

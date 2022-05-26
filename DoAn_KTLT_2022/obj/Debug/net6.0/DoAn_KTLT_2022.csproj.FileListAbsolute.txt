@@ -25,3 +25,4 @@ D:\CN-CNTT-FS\HK2\Kỹ thuật lập trình\Đồ án\DoAn_KTLT_2022\DoAn_KTLT_2
 D:\CN-CNTT-FS\HK2\Kỹ thuật lập trình\Đồ án\DoAn_KTLT_2022\DoAn_KTLT_2022\obj\Debug\net6.0\ref\DoAn_KTLT_2022.dll
 D:\CN-CNTT-FS\HK2\Kỹ thuật lập trình\Đồ án\DoAn_KTLT_2022\DoAn_KTLT_2022\obj\Debug\net6.0\DoAn_KTLT_2022.pdb
 D:\CN-CNTT-FS\HK2\Kỹ thuật lập trình\Đồ án\DoAn_KTLT_2022\DoAn_KTLT_2022\obj\Debug\net6.0\DoAn_KTLT_2022.genruntimeconfig.cache
+D:\CN-CNTT-FS\HK2\Kỹ thuật lập trình\Đồ án\DoAn_KTLT_2022\DoAn_KTLT_2022\obj\Debug\net6.0\DoAn_KTLT_2022.csproj.AssemblyReference.cache
